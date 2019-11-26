@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- - sample-data.xml - - Copyright (c) 2019 Rafael Corchuelo. - - In keeping with the traditional purpose of furthering education and 
+	research, it is - the policy of the copyright owner to permit non-commercial use and redistribution of - this software. It has been tested 
+	carefully, but it is not guaranteed for any particular - purposes. The copyright owner does not offer any warranties or representations, 
+	nor do - they accept any liabilities with respect to them. -->
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<import resource="conversion-service.xml" />
+
+	<!-- Shouts -->
+
+	<bean id="shout01" class="acme.entities.shouts.Shout">
+		<property name="author" value="Sergio S" />
+		<property name="text" value="Shout 1" />
+		<property name="moment" value="2019/09/09 10:00" />
+	</bean>
+
+	<bean id="shout02" class="acme.entities.shouts.Shout">
+		<property name="author" value="David C" />
+		<property name="text" value="Shout 2" />
+		<property name="moment" value="2019/09/08 10:01" />
+	</bean>
+
+	<bean id="shout03" class="acme.entities.shouts.Shout">
+		<property name="author" value="María M" />
+		<property name="text" value="Shout 3" />
+		<property name="moment" value="2019/09/07 09:00" />
+	</bean>
+
+	<bean id="shout04" class="acme.entities.shouts.Shout">
+		<property name="author" value="Alejandro M" />
+		<property name="text" value="Shout 4" />
+		<property name="moment" value="2019/09/06 01:00" />
+	</bean>
+
+	<!-- Announcements -->
+
+	<bean id="announcement01" class="acme.entities.announcements.Announcement">
+		<property name="title" value="Sample announcement 01" />
+		<property name="moment" value="2019/10/07 10:00" />
+		<property name="moreInfo" value="http://www.example.com" />
+		<property name="text" value="This is a description of an announcement" />
+	</bean>
+
+	<bean id="announcement02" class="acme.entities.announcements.Announcement">
+		<property name="title" value="Sample announcement 02" />
+		<property name="moment" value="2019/06/07 10:00" />
+		<property name="moreInfo" value="http://www.example.com" />
+		<property name="text" value="This is a description of another announcement" />
+	</bean>
+
+	<bean id="announcement03" class="acme.entities.announcements.Announcement">
+		<property name="title" value="Sample very old announcement 03" />
+		<property name="moment" value="1930/01/09 04:00" />
+		<property name="moreInfo" value="http://www.example.com" />
+		<property name="text" value="This is a description of a very old announcement" />
+	</bean>
+
+	<!-- Caceres bulletin -->
+
+	<bean id="caceresbulletin01" class="acme.entities.bulletins.CaceresBulletin">
+		<property name="author" value="David Caceres" />
+		<property name="text" value="Bulletin 1" />
+		<property name="moment" value="2019/09/06 01:00" />
+	</bean>
+
+	<bean id="caceresbulletin02" class="acme.entities.bulletins.CaceresBulletin">
+		<property name="author" value="David Caceres" />
+		<property name="text" value="Bulletin 2" />
+		<property name="moment" value="2019/09/07 09:00" />
+	</bean>
+
+	<!-- Gonzalez bulletin -->
+
+	<bean id="gonzalezbulletin01" class="acme.entities.bulletins.GonzalezBulletin">
+		<property name="author" value="Alejandro Gonzalez" />
+		<property name="text" value="Bulletin 1" />
+		<property name="moment" value="2019/09/01 05:00" />
+	</bean>
+
+	<bean id="gonzalezbulletin02" class="acme.entities.bulletins.GonzalezBulletin">
+		<property name="author" value="Alejandro Gonzalez" />
+		<property name="text" value="Bulletin 2" />
+		<property name="moment" value="2019/09/18 14:00" />
+	</bean>
+
+	<!-- María's Bulletin -->
+
+	<bean id="marinBulletin01" class="acme.entities.bulletins.MarinBulletin">
+		<property name="author" value="María Marín" />
+		<property name="text" value="Marin Bulletin 01" />
+		<property name="moment" value="2019/09/09 10:00" />
+	</bean>
+
+	<bean id="marinBulletin02" class="acme.entities.bulletins.MarinBulletin">
+		<property name="author" value="María Marín" />
+		<property name="text" value="Marin Bulletin 02" />
+		<property name="moment" value="2019/09/09 12:00" />
+	</bean>
+
+	<!-- Sanchez bulletin -->
+
+	<bean id="sanchezbulletin01" class="acme.entities.bulletins.SanchezBulletin">
+		<property name="web" value="http://twitter.com" />
+		<property name="description" value="Servicio de microblogging" />
+		<property name="moment" value="2019/09/06 01:00" />
+	</bean>
+
+	<bean id="sanchezbulletin02" class="acme.entities.bulletins.SanchezBulletin">
+		<property name="web" value="http://youtube.com" />
+		<property name="description" value="Servicio de búsqueda y reproducción de vídeos" />
+		<property name="moment" value="2019/09/09 02:00" />
+	</bean>
+
+	<!-- Companies -->
+
+	<bean id="company01" class="acme.entities.company.Company">
+		<property name="name" value="Google" />
+		<property name="sector" value="Tecnología" />
+		<property name="ceo" value="Sundar Pichai" />
+		<property name="activities" value="Realizan actividades varias" />
+		<property name="website" value="http://google.com" />
+		<property name="phone" value="+1 2025550176" />
+		<property name="email" value="google@gmail.com" />
+		<property name="incorporated" value="true" />
+		<property name="stars" value="5" />
+	</bean>
+
+	<bean id="company02" class="acme.entities.company.Company">
+		<property name="name" value="Twitter" />
+		<property name="sector" value="Tecnología" />
+		<property name="ceo" value="Jack Dorsey" />
+		<property name="activities" value="Tienen una aplicación de microblogging." />
+		<property name="website" value="http://twitter.com" />
+		<property name="phone" value="905403328" />
+		<property name="email" value="twitter@twitter.com" />
+		<property name="incorporated" value="true" />
+		<property name="stars">
+			<null />
+		</property>
+	</bean>
+
+	<bean id="company03" class="acme.entities.company.Company">
+		<property name="name" value="Mercadona" />
+		<property name="sector" value="Alimentación" />
+		<property name="ceo" value="Juan Roig" />
+		<property name="activities" value="Cadena de supermercados española." />
+		<property name="website" value="https://www.mercadona.es/" />
+		<property name="phone" value="900500103" />
+		<property name="email" value="sugerencias@mercadona.es" />
+		<property name="incorporated" value="true" />
+		<property name="stars" value="5" />
+	</bean>
+
+	<!-- Offers -->
+
+	<bean id="offer01" class="acme.entities.offer.Offer">
+		<property name="title" value="Programador en Acme" />
+		<property name="moment" value="2019/10/20 10:00" />
+		<property name="deadline" value="2020/03/01 10:00" />
+		<property name="description" value="Programar Java." />
+		<property name="minMoney" value="14000€" />
+		<property name="maxMoney" value="18000€" />
+		<property name="ticker" value="OAAAA-00000" />
+	</bean>
+
+	<bean id="offer02" class="acme.entities.offer.Offer">
+		<property name="title" value="Programador en Acme" />
+		<property name="moment" value="2019/10/20 10:00" />
+		<property name="deadline" value="2020/04/03 10:00" />
+		<property name="description" value="Programar Python." />
+		<property name="minMoney" value="12000€" />
+		<property name="maxMoney" value="16000€" />
+		<property name="ticker" value="OAAAA-00001" />
+	</bean>
+
+	<!-- Challenges -->
+
+	<bean id="challenge01" class="acme.entities.challenge.Challenge">
+		<property name="title" value="Ejemplo challenge 1" />
+		<property name="deadline" value="2020/07/27 23:59" />
+		<property name="description" value="Primer challenge" />
+		<property name="goalGold" value="goal gold" />
+		<property name="goalSilver" value="goal silver" />
+		<property name="goalBronze" value="goal bronze" />
+		<property name="rewardGold" value="30€" />
+		<property name="rewardSilver" value="20€" />
+		<property name="rewardBronze" value="10€" />
+	</bean>
+
+	<!-- Requests -->
+
+	<bean id="request01" class="acme.entities.reqs.Req">
+		<property name="title" value="Sample Request 01" />
+		<property name="creationMoment" value="1990/07/12 15:00" />
+		<property name="deadline" value="2020/04/04 00:00" />
+		<property name="text" value="This is a description of a sample request" />
+		<property name="reward" value="1000€" />
+		<property name="ticker" value="RABCD-01234" />
+	</bean>
+
+	<bean id="request02" class="acme.entities.reqs.Req">
+		<property name="title" value="Sample Request 02" />
+		<property name="creationMoment" value="2019/01/05 15:00" />
+		<property name="deadline" value="2022/04/04 00:00" />
+		<property name="text" value="This is a description of another request" />
+		<property name="reward" value="1000€" />
+		<property name="ticker" value="RXZXZ-01234" />
+	</bean>
+
+	<!-- Commercial Banner -->
+
+	<bean id="commercialBanner01" class="acme.entities.banner.CommercialBanner">
+		<property name="picture"
+			value="https://www.hola.com/imagenes/estar-bien/20180831128704/ronroneo-gatos-causas/0-595-638/gato-ronroneo-1-t.jpg" />
+		<property name="slogan" value="Un gato very guapo" />
+		<property name="targetURL" value="https://www.mundogatos.com/foros" />
+		<property name="creditCardNumber" value="5224746025394443" />
+		<property name="creditCardCvv" value="957" />
+		<property name="creditCardMonth" value="12" />
+		<property name="creditCardYear" value="2020" />
+	</bean>
+
+	<!-- Non Commercial Banner -->
+
+	<bean id="nonCommercialBanner01" class="acme.entities.banner.NonCommercialBanner">
+		<property name="picture"
+			value="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQQF073qYaGwa7pO2orf-CaVqHFzQHaNQaAf53m_hDrGvaBqfRy" />
+		<property name="slogan" value="Una tortuga very lenta" />
+		<property name="targetURL" value="http://www.terrariofilia.com/foro-tortugas-acuaticas/" />
+		<property name="jingle" value="" />
+	</bean>
+
+	<!-- Investor Records -->
+
+	<bean id="investor01" class="acme.entities.investor.Investor">
+		<property name="name" value="Sample investor 01" />
+		<property name="sector" value="Agricultura" />
+		<property name="investorStatement" value="Conforme" />
+		<property name="starNumber" value="1" />
+	</bean>
+
+	<bean id="investor02" class="acme.entities.investor.Investor">
+		<property name="name" value="Sample investor 01" />
+		<property name="sector" value="Agricultura" />
+		<property name="investorStatement" value="Conforme" />
+		<property name="starNumber" value="1" />
+	</bean>
+
+	<bean id="investor03" class="acme.entities.investor.Investor">
+		<property name="name" value="Sample investor 01" />
+		<property name="sector" value="Ganaderia" />
+		<property name="investorStatement" value="Conforme" />
+		<property name="starNumber" value="5" />
+	</bean>
+
+	<bean id="investor04" class="acme.entities.investor.Investor">
+		<property name="name" value="Sample investor 01" />
+		<property name="sector" value="Tecnología" />
+		<property name="investorStatement" value="Conforme" />
+		<property name="starNumber" value="5" />
+	</bean>
+</beans>
