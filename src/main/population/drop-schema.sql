@@ -7,6 +7,14 @@
        drop 
        foreign key FK_6lnbc6fo3om54vugoh8icg78m;
 
+    alter table `application` 
+       drop 
+       foreign key `FKoa6p4s2oyy7tf80xwc4r04vh6`;
+
+    alter table `application` 
+       drop 
+       foreign key `FKmbjdoxi3o93agxosoate4sxbt`;
+
     alter table `authenticated` 
        drop 
        foreign key FK_h52w0f3wjoi68b63wv9vwon57;
@@ -15,9 +23,21 @@
        drop 
        foreign key FK_6cyha9f1wpj0dpbxrrjddrqed;
 
+    alter table `descriptor_duty` 
+       drop 
+       foreign key `FK57eqqlhihwvd53ykpmsiqlx2p`;
+
+    alter table `descriptor_duty` 
+       drop 
+       foreign key `FKqitedkrksd2w8qyp1fp5eao9f`;
+
     alter table `employer` 
        drop 
        foreign key FK_na4dfobmeuxkwf6p75abmb2tr;
+
+    alter table `job` 
+       drop 
+       foreign key `FKfqwyynnbcsq0htxho3vchpd2u`;
 
     alter table `job` 
        drop 
@@ -37,6 +57,8 @@
 
     drop table if exists `anonymous`;
 
+    drop table if exists `application`;
+
     drop table if exists `authenticated`;
 
     drop table if exists `caceres_bulletin`;
@@ -50,6 +72,12 @@
     drop table if exists `consumer`;
 
     drop table if exists `customisation_parameters`;
+
+    drop table if exists `descriptor`;
+
+    drop table if exists `descriptor_duty`;
+
+    drop table if exists `duty`;
 
     drop table if exists `employer`;
 

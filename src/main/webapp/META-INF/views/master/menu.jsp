@@ -111,6 +111,7 @@
 
 		<acme:menu-option code="master.menu.user-account" access="isAuthenticated()">
 
+			<acme:menu-suboption code="master.menu.user-account.list-jobs" action="/authenticated/job/list" />
 			<acme:menu-suboption code="master.menu.list-announcement" action="/authenticated/announcement/list" />
 			<acme:menu-suboption code="master.menu.list-top-investors" action="/authenticated/investor/list-top" />
 			<acme:menu-suboption code="master.menu.list-investor" action="/authenticated/investor/list" />

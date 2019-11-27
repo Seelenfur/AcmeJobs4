@@ -108,6 +108,8 @@ master.menu.user-account.become-provider = Become a provider
 master.menu.user-account.consumer = Consumer data
 master.menu.user-account.become-consumer = Become a consumer
 
+master.menu.user-account.list-jobs = List jobs
+
 # master.footer ###############################################################
 
 master.footer.title.about = About us

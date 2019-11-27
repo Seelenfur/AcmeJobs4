@@ -8,16 +8,14 @@ import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.persistence.Transient;
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Past;
 
 import org.hibernate.validator.constraints.Length;
-import org.hibernate.validator.constraints.URL;
 
-import acme.entities.roles.Employer;
-import acme.framework.datatypes.Money;
+import acme.entities.roles.Worker;
 import acme.framework.entities.DomainEntity;
 import lombok.Getter;
 import lombok.Setter;
@@ -25,47 +23,40 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class Job extends DomainEntity {
+public class Application extends DomainEntity {
 
 	private static final long	serialVersionUID	= 1L;
 
 	@Column(unique = true)
 	@NotBlank
-	@Length(min = 5, max = 10)
+	@Length(min = 5, max = 15)
 	private String				reference;
 
+	@Temporal(TemporalType.TIMESTAMP)
+	@Past
+	private Date				moment;
+
 	@NotNull
-	private JobStatus			status;
+	private ApplicationStatus	status;
 
 	@NotBlank
-	private String				title;
+	private String				statement;
 
-	@NotNull
-	@Temporal(TemporalType.TIMESTAMP)
-	private Date				deadline;
+	@NotBlank
+	private String				skills;
 
-	@NotNull
-	@Valid
-	private Money				salary;
-
-	@URL
-	private String				moreInfo;
+	@NotBlank
+	private String				qualifications;
 
 	// Relationships
 
 	@NotNull
 	@Valid
 	@ManyToOne(optional = false)
-	private Descriptor			descriptor;
+	private Worker				worker;
 
 	@NotNull
 	@Valid
 	@ManyToOne(optional = false)
-	private Employer			employer;
-
-
-	@Transient
-	public boolean getIsActive() {
-		return this.status == JobStatus.PUBLISHED && this.deadline.after(new Date());
-	}
+	private Job					job;
 }

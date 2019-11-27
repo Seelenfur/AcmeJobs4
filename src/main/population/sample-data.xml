@@ -323,61 +323,32 @@
 	<bean name="employer2Authenticated" class="acme.framework.entities.Authenticated">
 		<property name="userAccount" ref="employer2UserAccount" />
 	</bean>
-	
+
 	<!-- Jobs -->
 
 	<bean name="job1" class="acme.entities.jobs.Job">
-    	<property name="reference" value="EMP1-JOB1"/>
-    	<property name="title" value="Title 1"/>
-    	<property name="deadline" value="2030/12/11 23:59"/>
-    	<property name="salary" value="€ 15,000.98"/>
-    	<property name="description" value="Lorem ipsum sit dolor amet."/>
-    	<property name="moreInfo" value="http://www.example.com"/>
-    	<property name="finalMode" value="true"/>
-    	<property name="employer" ref="employer1Employer"/>
-    </bean>
+		<property name="reference" value="EMP1-JOB1" />
+		<property name="status" value="PUBLISHED" />
+		<property name="title" value="Title 1" />
+		<property name="deadline" value="2030/12/11 23:59" />
+		<property name="salary" value="€ 15,000.98" />
+		<property name="moreInfo" value="http://www.example.com" />
+		<property name="descriptor" ref="job1Descriptor" />
+		<property name="employer" ref="employer1Employer" />
+	</bean>
 
-	<bean name="job2" class="acme.entities.jobs.Job">
-    	<property name="reference" value="EMP1-JOB2"/>
-    	<property name="title" value="Title 2"/>
-    	<property name="deadline" value="2030/12/11 23:59"/>
-    	<property name="salary" value="€ 15,000.98"/>
-    	<property name="description" value="Lorem ipsum sit dolor amet."/>
-    	<property name="moreInfo" value="http://www.example.com"/>
-    	<property name="finalMode" value="true"/>
-    	<property name="employer" ref="employer1Employer"/>
-    </bean>
+	<bean name="job1Descriptor" class="acme.entities.jobs.Descriptor">
+		<property name="description" value="Description 1" />
+		<property name="duties">
+			<list>
+				<ref bean="job1Duty1" />
+			</list>
+		</property>
+	</bean>
 
-	<bean name="job3" class="acme.entities.jobs.Job">
-    	<property name="reference" value="EMP1-JOB3"/>
-    	<property name="title" value="Title 3"/>
-    	<property name="deadline" value="2030/12/11 23:59"/>
-    	<property name="salary" value="€ 15,000.98"/>
-    	<property name="description" value="Lorem ipsum sit dolor amet."/>
-    	<property name="moreInfo" value="http://www.example.com"/>
-    	<property name="finalMode" value="true"/>
-    	<property name="employer" ref="employer1Employer"/>
-    </bean>
-
-	<bean name="job4" class="acme.entities.jobs.Job">
-    	<property name="reference" value="EMP2-JOB4"/>
-    	<property name="title" value="Title 4"/>
-    	<property name="deadline" value="2030/12/11 23:59"/>
-    	<property name="salary" value="€ 15,000.98"/>
-    	<property name="description" value="Lorem ipsum sit dolor amet."/>
-    	<property name="moreInfo" value="http://www.example.com"/>
-    	<property name="finalMode" value="true"/>
-    	<property name="employer" ref="employer2Employer"/>
-    </bean>
-
-	<bean name="job5" class="acme.entities.jobs.Job">
-    	<property name="reference" value="EMP2-JOB5"/>
-    	<property name="title" value="Title 5"/>
-    	<property name="deadline" value="2030/12/11 23:59"/>
-    	<property name="salary" value="€ 15,000.98"/>
-    	<property name="description" value="Lorem ipsum sit dolor amet."/>
-    	<property name="moreInfo" value="http://www.example.com"/>
-    	<property name="finalMode" value="true"/>
-    	<property name="employer" ref="employer2Employer"/>
-    </bean>
+	<bean name="job1Duty1" class="acme.entities.jobs.Duty">
+		<property name="title" value="Duty 1" />
+		<property name="description" value="Duty 1 description" />
+		<property name="weekPercentage" value="50" />
+	</bean>
 </beans>
