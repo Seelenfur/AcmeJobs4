@@ -324,6 +324,37 @@
 		<property name="userAccount" ref="employer2UserAccount" />
 	</bean>
 
+	<!-- Workers -->
+
+	<bean name="worker1UserAccount" class="acme.framework.entities.UserAccount">
+		<property name="username" value="worker1" />
+		<property name="password" value="worker1" />
+		<property name="enabled" value="true" />
+		<property name="identity">
+			<bean class="acme.datatypes.UserIdentity">
+				<property name="name" value="Worker" />
+				<property name="surname" value="One" />
+				<property name="email" value="worker1@acme.com" />
+			</bean>
+		</property>
+		<property name="roles">
+			<list>
+				<ref bean="worker1Worker" />
+				<ref bean="worker1Authenticated" />
+			</list>
+		</property>
+	</bean>
+
+	<bean name="worker1Worker" class="acme.entities.roles.Worker">
+		<property name="qualifications" value="Qualification 1, qualification 2..." />
+		<property name="skills" value="Fast" />
+		<property name="userAccount" ref="worker1UserAccount" />
+	</bean>
+
+	<bean name="worker1Authenticated" class="acme.framework.entities.Authenticated">
+		<property name="userAccount" ref="worker1UserAccount" />
+	</bean>
+
 	<!-- Jobs -->
 
 	<bean name="job1" class="acme.entities.jobs.Job">
@@ -350,5 +381,18 @@
 		<property name="title" value="Duty 1" />
 		<property name="description" value="Duty 1 description" />
 		<property name="weekPercentage" value="50" />
+	</bean>
+
+	<!-- Applications -->
+
+	<bean name="application1" class="acme.entities.jobs.Application">
+		<property name="reference" value="EMP1-JOB1:WOR1" />
+		<property name="moment" value="2018/12/11 23:59" />
+		<property name="status" value="PENDING" />
+		<property name="statement" value="Example" />
+		<property name="skills" value="A lot" />
+		<property name="qualifications" value="A lot" />
+		<property name="worker" ref="worker1Worker" />
+		<property name="job" ref="job1" />
 	</bean>
 </beans>
