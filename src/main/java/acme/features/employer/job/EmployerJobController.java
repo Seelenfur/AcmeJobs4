@@ -19,14 +19,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import acme.components.CustomCommand;
-import acme.entities.company.Company;
+import acme.entities.jobs.Job;
+import acme.entities.roles.Employer;
 import acme.framework.components.BasicCommand;
 import acme.framework.controllers.AbstractController;
-import acme.framework.entities.Authenticated;
 
 @Controller
-@RequestMapping("/authenticated/company/")
-public class EmployerJobController extends AbstractController<Authenticated, Company> {
+@RequestMapping("/employer/job/")
+public class EmployerJobController extends AbstractController<Employer, Job> {
 
 	@Autowired
 	private EmployerJobShowService		showService;
