@@ -1,6 +1,9 @@
 worker.application.form.label.reference = Referencia
 worker.application.form.label.moment = Momento
 worker.application.form.label.status = Estado
+employer.application.form.label.status.pending = Pendiente
+employer.application.form.label.status.accepted = Aceptada
+employer.application.form.label.status.rejected = Rechazada
 worker.application.form.label.statement = Declaración
 worker.application.form.label.skills = Habilidades
 worker.application.form.label.qualifications = Cualificaciones
@@ -11,3 +14,4 @@ worker.application.form.button.return = Volver
 worker.application.list.label.reference = Referencia
 worker.application.list.label.moment = Momento
 worker.application.list.label.statement = Declaración
+worker.application.list.label.status = Estado

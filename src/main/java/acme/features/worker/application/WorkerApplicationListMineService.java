@@ -46,7 +46,7 @@ public class WorkerApplicationListMineService implements AbstractListService<Wor
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "reference", "moment", "statement");
+		request.unbind(entity, model, "reference", "moment", "statement", "status");
 	}
 
 }

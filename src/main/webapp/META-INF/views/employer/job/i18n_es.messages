@@ -1,5 +1,7 @@
 employer.job.form.label.reference = Referencia
 employer.job.form.label.status = Estado
+employer.job.form.label.status.draft = Borrador
+employer.job.form.label.status.published = Publicado
 employer.job.form.label.title = Título
 employer.job.form.label.deadline = Fecha límite
 employer.job.form.label.salary = Salario
@@ -11,6 +13,13 @@ employer.job.form.label.descriptor.duty.title = Título
 employer.job.form.label.descriptor.duty.description = Descripción
 employer.job.form.label.descriptor.duty.weekPercentage = Porcentaje semanal
 
+employer.job.form.error.rejected-currency = Solo se aceptan cantidades en euros
+employer.job.form.error.must-future = La fecha límite debe estar en el futuro
+employer.job.form.error.reference-unique = La referencia debe ser única
+
+employer.job.form.button.update = Actualizar
+employer.job.form.button.delete = Borrar
+employer.job.form.button.submit = Crear
 employer.job.form.button.return = Volver
 
 employer.job.list.label.reference = Referencia
