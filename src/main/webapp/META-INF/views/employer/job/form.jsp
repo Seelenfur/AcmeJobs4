@@ -29,5 +29,7 @@
 		action="update" />
 	<acme:form-submit test="${command == 'update'}" code="employer.job.form.button.update"
 		action="update" />
+	<acme:form-submit test="${command == 'create'}" code="employer.job.form.button.create"
+		action="create" />
 	<acme:form-return code="employer.job.form.button.return" />
 </acme:form>

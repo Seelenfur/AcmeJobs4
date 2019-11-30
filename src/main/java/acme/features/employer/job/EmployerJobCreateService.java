@@ -7,6 +7,7 @@ import java.util.GregorianCalendar;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.entities.jobs.Descriptor;
 import acme.entities.jobs.Job;
 import acme.entities.roles.Employer;
 import acme.framework.components.Errors;
@@ -36,7 +37,7 @@ public class EmployerJobCreateService implements AbstractCreateService<Employer,
 		assert entity != null;
 		assert errors != null;
 
-		request.bind(entity, errors, "employer", "descriptor");
+		request.bind(entity, errors);
 	}
 
 	@Override
@@ -45,15 +46,17 @@ public class EmployerJobCreateService implements AbstractCreateService<Employer,
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "reference", "status", "title", "deadline", "salary", "moreInfo");
+		request.unbind(entity, model, "reference", "status", "title", "deadline", "salary", "moreInfo", "descriptor.description");
 	}
 
 	@Override
 	public Job instantiate(final Request<Job> request) {
 		assert request != null;
-		Job result;
+		Job result = new Job();
 
-		result = new Job();
+		result.setEmployer(this.repository.findOneEmployerById(request.getPrincipal().getActiveRoleId()));
+		result.setDescriptor(new Descriptor());
+
 		return result;
 	}
 
@@ -76,7 +79,11 @@ public class EmployerJobCreateService implements AbstractCreateService<Employer,
 			errors.state(request, isFuture, "deadline", "employer.job.form.error.must-future");
 		}
 
-		System.out.println(entity);
+		boolean referenceHasErrors = errors.hasErrors("reference");
+		if (!referenceHasErrors) {
+			Job existing = this.repository.findOneJobByReference(entity.getReference());
+			errors.state(request, existing == null || existing.getId() == entity.getId(), "reference", "employer.job.form.error.reference-unique");
+		}
 	}
 
 	@Override
@@ -84,11 +91,8 @@ public class EmployerJobCreateService implements AbstractCreateService<Employer,
 		assert request != null;
 		assert entity != null;
 
-		System.out.println(entity);
-
-		entity.setEmployer(null);
-
 		this.repository.save(entity);
+		this.repository.save(entity.getDescriptor());
 
 	}
 }
