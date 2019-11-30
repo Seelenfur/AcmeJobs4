@@ -12,11 +12,5 @@
 	<acme:form-url code="employer.job.form.label.moreInfo" path="moreInfo" />
 	<acme:form-textarea code="employer.job.form.label.descriptor.description" path="descriptor.description" />
 
-	<jstl:forEach var="duty" items="${requestScope['descriptor.duties']}" varStatus="varStatus">
-		<acme:print value="${duty.title}" />
-		<acme:print value="${duty.description}" />
-		<acme:print value="${duty.weekPercentage}" />
-	</jstl:forEach>
-
 	<acme:form-return code="employer.job.form.button.return" />
 </acme:form>

@@ -22,14 +22,12 @@ public class WorkerApplicationCreateService implements AbstractCreateService<Wor
 
 	@Override
 	public boolean authorise(final Request<Application> request) {
-		// TODO Auto-generated method stub
 		assert request != null;
 		return true;
 	}
 
 	@Override
 	public void bind(final Request<Application> request, final Application entity, final Errors errors) {
-		// TODO Auto-generated method stub
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
@@ -39,7 +37,6 @@ public class WorkerApplicationCreateService implements AbstractCreateService<Wor
 
 	@Override
 	public void unbind(final Request<Application> request, final Application entity, final Model model) {
-		// TODO Auto-generated method stub
 		assert request != null;
 		assert entity != null;
 		assert model != null; // HAY QUE HACER TODA ESTA CLASEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
@@ -63,7 +60,6 @@ public class WorkerApplicationCreateService implements AbstractCreateService<Wor
 
 	@Override
 	public void create(final Request<Application> request, final Application entity) {
-		// TODO Auto-generated method stub
 		Date moment;
 
 		moment = new Date(System.currentTimeMillis() - 1);

@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.jobs.Job;
+import acme.entities.jobs.JobStatus;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.entities.Authenticated;
@@ -21,7 +22,11 @@ public class AuthenticatedJobShowService implements AbstractShowService<Authenti
 	public boolean authorise(final Request<Job> request) {
 		assert request != null;
 
-		return true;
+		int jobId = request.getModel().getInteger("id");
+		Job job = this.repository.findOneById(jobId);
+		boolean result = job.getStatus() == JobStatus.PUBLISHED;
+
+		return result;
 	}
 
 	@Override

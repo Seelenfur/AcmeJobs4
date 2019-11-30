@@ -373,6 +373,7 @@
 		<property name="duties">
 			<list>
 				<ref bean="job1Duty1" />
+				<ref bean="job1Duty2" />
 			</list>
 		</property>
 	</bean>
@@ -381,6 +382,95 @@
 		<property name="title" value="Duty 1" />
 		<property name="description" value="Duty 1 description" />
 		<property name="weekPercentage" value="50" />
+	</bean>
+
+	<bean name="job1Duty2" class="acme.entities.jobs.Duty">
+		<property name="title" value="Duty 2" />
+		<property name="description" value="Duty 2 description" />
+		<property name="weekPercentage" value="50" />
+	</bean>
+
+	<bean name="job2" class="acme.entities.jobs.Job">
+		<property name="reference" value="EMP1-JOB2" />
+		<property name="status" value="DRAFT" />
+		<property name="title" value="Title 2" />
+		<property name="deadline" value="2030/12/11 23:59" />
+		<property name="salary" value="€ 15,000.98" />
+		<property name="moreInfo" value="http://www.example.com" />
+		<property name="descriptor" ref="job2Descriptor" />
+		<property name="employer" ref="employer1Employer" />
+	</bean>
+
+	<bean name="job2Descriptor" class="acme.entities.jobs.Descriptor">
+		<property name="description" value="Description 2" />
+		<property name="duties">
+			<list>
+				<ref bean="job2Duty1" />
+			</list>
+		</property>
+	</bean>
+
+	<bean name="job2Duty1" class="acme.entities.jobs.Duty">
+		<property name="title" value="Duty 1" />
+		<property name="description" value="Duty 1 description" />
+		<property name="weekPercentage" value="100" />
+	</bean>
+
+	<bean name="job3" class="acme.entities.jobs.Job">
+		<property name="reference" value="EMP2-JOB3" />
+		<property name="status" value="DRAFT" />
+		<property name="title" value="Title 3" />
+		<property name="deadline" value="2030/12/11 23:59" />
+		<property name="salary" value="€ 15,000.98" />
+		<property name="moreInfo" value="http://www.example.com" />
+		<property name="descriptor" ref="job3Descriptor" />
+		<property name="employer" ref="employer2Employer" />
+	</bean>
+
+	<bean name="job3Descriptor" class="acme.entities.jobs.Descriptor">
+		<property name="description" value="Description 3" />
+		<property name="duties">
+			<list>
+			</list>
+		</property>
+	</bean>
+
+	<bean name="job4" class="acme.entities.jobs.Job">
+		<property name="reference" value="EMP2-JOB4" />
+		<property name="status" value="PUBLISHED" />
+		<property name="title" value="Title 4" />
+		<property name="deadline" value="2030/12/11 23:59" />
+		<property name="salary" value="€ 15,000.98" />
+		<property name="moreInfo" value="http://www.example.com" />
+		<property name="descriptor" ref="job4Descriptor" />
+		<property name="employer" ref="employer2Employer" />
+	</bean>
+
+	<bean name="job4Descriptor" class="acme.entities.jobs.Descriptor">
+		<property name="description" value="Description 4" />
+		<property name="duties">
+			<list>
+			</list>
+		</property>
+	</bean>
+
+	<bean name="job5" class="acme.entities.jobs.Job">
+		<property name="reference" value="EMP1-JOB5" />
+		<property name="status" value="PUBLISHED" />
+		<property name="title" value="Title 5" />
+		<property name="deadline" value="2030/12/11 23:59" />
+		<property name="salary" value="€ 15,000.98" />
+		<property name="moreInfo" value="http://www.example.com" />
+		<property name="descriptor" ref="job5Descriptor" />
+		<property name="employer" ref="employer1Employer" />
+	</bean>
+
+	<bean name="job5Descriptor" class="acme.entities.jobs.Descriptor">
+		<property name="description" value="Description 5" />
+		<property name="duties">
+			<list>
+			</list>
+		</property>
 	</bean>
 
 	<!-- Applications -->
@@ -394,5 +484,16 @@
 		<property name="qualifications" value="A lot" />
 		<property name="worker" ref="worker1Worker" />
 		<property name="job" ref="job1" />
+	</bean>
+
+	<bean name="application2" class="acme.entities.jobs.Application">
+		<property name="reference" value="EMP1-JOB1:WOR2" />
+		<property name="moment" value="2018/12/11 23:59" />
+		<property name="status" value="REJECTED" />
+		<property name="statement" value="Example" />
+		<property name="skills" value="A lot" />
+		<property name="qualifications" value="A lot" />
+		<property name="worker" ref="worker1Worker" />
+		<property name="job" ref="job2" />
 	</bean>
 </beans>
