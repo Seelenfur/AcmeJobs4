@@ -5,12 +5,9 @@ employer.job.form.label.status.published = Publicado
 employer.job.form.label.title = Título
 employer.job.form.label.deadline = Fecha límite
 employer.job.form.label.salary = Salario
-employer.job.form.label.moreInfo = Más información
+employer.job.form.label.moreInfo = Más información (opcional)
 employer.job.form.label.descriptor = Descriptor
 employer.job.form.label.descriptor.description = Descripción
-employer.job.form.label.descriptor.duty = Tarea
-employer.job.form.label.descriptor.duty.title = Título
-employer.job.form.label.descriptor.duty.description = Descripción
 employer.job.form.label.descriptor.duty.weekPercentage = Porcentaje semanal
 
 employer.job.form.error.rejected-currency = Solo se aceptan cantidades en euros
