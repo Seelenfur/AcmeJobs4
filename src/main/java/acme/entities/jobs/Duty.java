@@ -2,7 +2,10 @@
 package acme.entities.jobs;
 
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
+import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.Range;
 
@@ -25,4 +28,9 @@ public class Duty extends DomainEntity {
 
 	@Range(min = 0, max = 100)
 	private float				weekPercentage;
+
+	@NotNull
+	@Valid
+	@ManyToOne(optional = false)
+	private Descriptor			descriptor;
 }

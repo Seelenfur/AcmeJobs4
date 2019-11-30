@@ -6,11 +6,8 @@ authenticated.job.form.label.salary = Salario
 authenticated.job.form.label.moreInfo = Más información
 authenticated.job.form.label.descriptor = Descriptor
 authenticated.job.form.label.descriptor.description = Descripción
-authenticated.job.form.label.descriptor.duty = Tarea
-authenticated.job.form.label.descriptor.duty.title = Título
-authenticated.job.form.label.descriptor.duty.description = Descripción
-authenticated.job.form.label.descriptor.duty.weekPercentage = Porcentaje semanal
 
+authenticated.job.form.button.list-duties = Listar tareas
 authenticated.job.form.button.return = Volver
 
 authenticated.job.list.label.reference = Referencia

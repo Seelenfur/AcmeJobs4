@@ -28,7 +28,6 @@
 	<acme:form-submit test="${command == 'show' && requestScope['status'] == 'DRAFT'}" code="employer.job.form.button.update"
 		action="update" />
 	<acme:form-submit test="${command == 'update'}" code="employer.job.form.button.update" action="update" />
-	<acme:form-submit test="${command == 'create'}" code="employer.job.form.button.create" action="create" />
 	<acme:form-submit code="employer.job.form.button.list-duties"
 		action="/employer/duty/list?id=${id}" method="get" />
 	<acme:form-return code="employer.job.form.button.return" />
