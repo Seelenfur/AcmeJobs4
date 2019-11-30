@@ -108,6 +108,16 @@
         primary key (`id`)
     ) engine=InnoDB;
 
+    create table `credit_card` (
+       `id` integer not null,
+        `version` integer not null,
+        `credit_card_cvv` varchar(255),
+        `credit_card_month` integer,
+        `credit_card_number` varchar(255),
+        `credit_card_year` integer,
+        primary key (`id`)
+    ) engine=InnoDB;
+
     create table `customisation_parameters` (
        `id` integer not null,
         `version` integer not null,

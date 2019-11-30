@@ -12,7 +12,7 @@
 				<acme:form-option code="employer.job.form.label.status.published" value="PUBLISHED" />
 			</jstl:when>
 			<jstl:otherwise>
-				<jstl:forEach var="status" items="<%= acme.entities.jobs.JobStatus.values() %>">
+				<jstl:forEach var="status" items="<%=acme.entities.jobs.JobStatus.values()%>">
 					<acme:form-option code="employer.job.form.label.status.${status.name().toLowerCase()}" value="${status.name()}"
 						selected="${(requestScope['status'] == status) ? 'true' : 'false'}" />
 				</jstl:forEach>
@@ -27,9 +27,9 @@
 
 	<acme:form-submit test="${command == 'show' && requestScope['status'] == 'DRAFT'}" code="employer.job.form.button.update"
 		action="update" />
-	<acme:form-submit test="${command == 'update'}" code="employer.job.form.button.update"
-		action="update" />
-	<acme:form-submit test="${command == 'create'}" code="employer.job.form.button.create"
-		action="create" />
+	<acme:form-submit test="${command == 'update'}" code="employer.job.form.button.update" action="update" />
+	<acme:form-submit test="${command == 'create'}" code="employer.job.form.button.create" action="create" />
+	<acme:form-submit code="employer.job.form.button.list-duties"
+		action="/employer/duty/list?id=${id}" />
 	<acme:form-return code="employer.job.form.button.return" />
 </acme:form>

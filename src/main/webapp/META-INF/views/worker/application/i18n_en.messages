@@ -1,9 +1,9 @@
 worker.application.form.label.reference = Reference
 worker.application.form.label.moment = Moment
 worker.application.form.label.status = Status
-employer.application.form.label.status.pending = Pending
-employer.application.form.label.status.accepted = Accepted
-employer.application.form.label.status.rejected = Rejected
+worker.application.form.label.status.pending = Pending
+worker.application.form.label.status.accepted = Accepted
+worker.application.form.label.status.rejected = Rejected
 worker.application.form.label.statement = Statement
 worker.application.form.label.skills = Skills
 worker.application.form.label.qualifications = Qualifications

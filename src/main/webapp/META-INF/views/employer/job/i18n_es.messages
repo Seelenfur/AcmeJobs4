@@ -17,6 +17,7 @@ employer.job.form.error.reference-unique = La referencia debe ser única
 employer.job.form.button.update = Actualizar
 employer.job.form.button.delete = Borrar
 employer.job.form.button.submit = Crear
+employer.job.form.button.list-duties = Listar tareas
 employer.job.form.button.return = Volver
 
 employer.job.list.label.reference = Referencia
