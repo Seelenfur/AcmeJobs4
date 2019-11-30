@@ -94,6 +94,17 @@ master.menu.consumer = Consumer
 master.menu.consumer.favourite-link = Favourite link
 master.menu.consumer.create-offer = Create offer
 
+# master.menu.employer ##########################################################
+
+master.menu.employer = Employer
+master.menu.employer.job.list-mine = List my jobs
+master.menu.employer.application.list-mine = List applications for my jobs
+
+# master.menu.worker ##########################################################
+
+master.menu.worker = Worker
+master.menu.worker.application.list-mine = List my applications
+
 # master.menu.user-account ####################################################
 
 master.menu.user-account = Account
@@ -102,6 +113,8 @@ master.menu.user-account.provider = Provider data
 master.menu.user-account.become-provider = Become a provider
 master.menu.user-account.consumer = Consumer data
 master.menu.user-account.become-consumer = Become a consumer
+
+master.menu.user-account.list-jobs = List jobs
 
 # master.footer ###############################################################
 

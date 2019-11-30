@@ -99,6 +99,15 @@
 			<acme:menu-suboption code="master.menu.consumer.create-offer" action="/consumer/offer/create" />
 			<acme:menu-suboption code="master.menu.consumer.favourite-link" action="http://www.example.com/" />
 		</acme:menu-option>
+
+		<acme:menu-option code="master.menu.employer" access="hasRole('Employer')">
+			<acme:menu-suboption code="master.menu.employer.job.list-mine" action="/employer/job/list-mine" />
+			<acme:menu-suboption code="master.menu.employer.application.list-mine" action="/employer/application/list-mine" />
+		</acme:menu-option>
+
+		<acme:menu-option code="master.menu.worker" access="hasRole('Worker')">
+			<acme:menu-suboption code="master.menu.worker.application.list-mine" action="/worker/application/list-mine" />
+		</acme:menu-option>
 	</acme:menu-left>
 
 	<acme:menu-right>
@@ -107,6 +116,7 @@
 
 		<acme:menu-option code="master.menu.user-account" access="isAuthenticated()">
 
+			<acme:menu-suboption code="master.menu.user-account.list-jobs" action="/authenticated/job/list" />
 			<acme:menu-suboption code="master.menu.list-announcement" action="/authenticated/announcement/list" />
 			<acme:menu-suboption code="master.menu.list-top-investors" action="/authenticated/investor/list-top" />
 			<acme:menu-suboption code="master.menu.list-investor" action="/authenticated/investor/list" />
