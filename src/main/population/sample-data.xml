@@ -382,12 +382,14 @@
 		<property name="title" value="Duty 1" />
 		<property name="description" value="Duty 1 description" />
 		<property name="weekPercentage" value="50" />
+		<property name="descriptor" ref="job1Descriptor" />
 	</bean>
 
 	<bean name="job1Duty2" class="acme.entities.jobs.Duty">
 		<property name="title" value="Duty 2" />
 		<property name="description" value="Duty 2 description" />
 		<property name="weekPercentage" value="50" />
+		<property name="descriptor" ref="job1Descriptor" />
 	</bean>
 
 	<bean name="job2" class="acme.entities.jobs.Job">
@@ -414,6 +416,7 @@
 		<property name="title" value="Duty 1" />
 		<property name="description" value="Duty 1 description" />
 		<property name="weekPercentage" value="100" />
+		<property name="descriptor" ref="job2Descriptor" />
 	</bean>
 
 	<bean name="job3" class="acme.entities.jobs.Job">

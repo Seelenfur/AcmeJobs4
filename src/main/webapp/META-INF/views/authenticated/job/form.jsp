@@ -12,5 +12,6 @@
 	<acme:form-url code="authenticated.job.form.label.moreInfo" path="moreInfo" />
 	<acme:form-textarea code="authenticated.job.form.label.descriptor.description" path="descriptor.description" />
 
+	<acme:form-submit code="authenticated.job.form.button.list-duties" action="/authenticated/duty/list?id=${id}" method="get" />
 	<acme:form-return code="authenticated.job.form.button.return" />
 </acme:form>

@@ -1,11 +1,14 @@
 
 package acme.entities.jobs;
 
+import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
@@ -55,7 +58,7 @@ public class Job extends DomainEntity {
 
 	@NotNull
 	@Valid
-	@ManyToOne(optional = false)
+	@OneToOne(optional = false)
 	private Descriptor			descriptor;
 
 	@NotNull
@@ -66,6 +69,7 @@ public class Job extends DomainEntity {
 
 	@Transient
 	public boolean getIsActive() {
-		return this.status == JobStatus.PUBLISHED && this.deadline.after(new Date());
+		Calendar calendar = new GregorianCalendar();
+		return this.status == JobStatus.PUBLISHED && this.deadline.after(calendar.getTime());
 	}
 }

@@ -19,15 +19,15 @@ import lombok.Setter;
 @Setter
 public class Descriptor extends DomainEntity {
 
-	private static final long	serialVersionUID	= 1L;
+	private static final long		serialVersionUID	= 1L;
 
 	@NotBlank
-	private String				description;
+	private String					description;
 
 	// Relationships
 
 	@NotNull
 	@Valid
-	@OneToMany(fetch = FetchType.EAGER)
-	private Collection<Duty>	duties;
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "descriptor")
+	private Collection<@Valid Duty>	duties;
 }
