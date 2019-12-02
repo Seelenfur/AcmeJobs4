@@ -106,11 +106,20 @@ master.menu.employer.application.list-mine = Listar solicitudes a mis trabajos
 master.menu.worker = Trabajador
 master.menu.worker.application.list-mine = Listar mis solicitudes
 
+
 # master.menu.sponsor #########################################################
 
 master.menu.sponsor = Patrocinador
 master.menu.sponsor.comercial-banner.list-mine = Listar mis Banners Comerciales
 master.menu.sponsor.non-comercial-banner.list-mine = Listar mis Banners no Comerciales
+
+
+# master.menu.auditor ##########################################################
+
+master.menu.auditor = Auditor
+master.menu.auditor.job.list-mine = Listar mis audiciones
+master.menu.auditor.job.list-not-mine = Listar otras audiciones
+
 
 # master.menu.user-account ####################################################
 
