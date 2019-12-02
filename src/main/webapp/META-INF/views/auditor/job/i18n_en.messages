@@ -1,0 +1,25 @@
+auditor.auditorRecord.form.label.reference = Reference
+auditor.auditorRecord.form.label.status = Status
+auditor.auditorRecord.form.label.status.draft = Draft
+auditor.auditorRecord.form.label.status.published = Published
+auditor.auditorRecord.form.label.title = Title
+auditor.auditorRecord.form.label.deadline = Deadline
+auditor.auditorRecord.form.label.salary = Salary
+auditor.auditorRecord.form.label.moreInfo = More info (optional)
+auditor.auditorRecord.form.label.descriptor = Descriptor
+auditor.auditorRecord.label.descriptor.description = Description
+auditor.auditorRecord.form.label.descriptor.duty.weekPercentage = Weekly percentage
+
+auditor.auditorRecord.form.error.rejected-currency = Only EUR are allowed
+auditor.auditorRecord.form.error.must-future = The deadline must be in the future
+auditor.auditorRecord.form.error.reference-unique = The reference must be unique
+
+auditor.auditorRecord.form.button.update = Update
+auditor.auditorRecord.form.button.delete = Delete
+auditor.auditorRecord.form.button.submit = Create
+auditor.auditorRecord.form.button.list-duties = List duties
+auditor.auditorRecord.form.button.return = Return
+
+auditor.auditorRecord.list.label.reference = Reference
+auditor.auditorRecord.list.label.deadline = Deadline
+auditor.auditorRecord.list.label.title = Title
