@@ -34,4 +34,5 @@ public class CommercialBanner extends Banner {
 	@Range(min = 2000, max = 9999)
 	@NotNull
 	private Integer				creditCardYear;
+
 }
