@@ -105,11 +105,20 @@ master.menu.employer.application.list-mine = List applications for my jobs
 master.menu.worker = Worker
 master.menu.worker.application.list-mine = List my applications
 
+
+# master.menu.sponsor #########################################################
+
+master.menu.sponsor = Sponsor
+master.menu.sponsor.comercial-banner.list-mine = List my Commercial Banners
+master.menu.sponsor.non-comercial-banner.list-mine = List my Non Commercial Banners
+
+
 # master.menu.auditor ##########################################################
 
 master.menu.auditor = Auditor
 master.menu.auditor.job.list-mine = List my auditors records
 master.menu.auditor.job.list-not-mine = List other auditors records
+
 
 # master.menu.user-account ####################################################
 
