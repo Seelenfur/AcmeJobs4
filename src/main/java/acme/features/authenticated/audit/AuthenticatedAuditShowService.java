@@ -24,9 +24,7 @@ public class AuthenticatedAuditShowService implements AbstractShowService<Authen
 
 		int auditId = request.getModel().getInteger("id");
 		Audit audit = this.repository.findOneById(auditId);
-		System.out.println(audit.getStatus());
-		System.out.println(audit.getJob().getStatus());
-		System.out.println(audit.getJob().getDeadline());
+
 		boolean result = audit.getStatus() == AuditStatus.PUBLISHED && audit.getJob().getIsActive();
 
 		return result;

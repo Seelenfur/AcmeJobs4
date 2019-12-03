@@ -55,6 +55,14 @@
        drop 
        foreign key `FK3rxjf8uh6fh2u990pe8i2at0e`;
 
+    alter table `message` 
+       drop 
+       foreign key `FK3ny0h1379q528toyokq81noiu`;
+
+    alter table `message` 
+       drop 
+       foreign key `FKn5adlx3oqjna7aupm8gwg3fuj`;
+
     alter table `non_commercial_banner` 
        drop 
        foreign key FK_2l8gpcwh19e7jj513or4r9dvb;
@@ -112,6 +120,10 @@
     drop table if exists `job`;
 
     drop table if exists `marin_bulletin`;
+
+    drop table if exists `message`;
+
+    drop table if exists `message_thread`;
 
     drop table if exists `non_commercial_banner`;
 
