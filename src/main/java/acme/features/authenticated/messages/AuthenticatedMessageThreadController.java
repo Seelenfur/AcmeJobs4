@@ -13,7 +13,7 @@ import acme.framework.controllers.AbstractController;
 import acme.framework.entities.Authenticated;
 
 @Controller
-@RequestMapping("/authenticated/messages")
+@RequestMapping("/authenticated/message-thread/")
 public class AuthenticatedMessageThreadController extends AbstractController<Authenticated, MessageThread> {
 
 	@Autowired

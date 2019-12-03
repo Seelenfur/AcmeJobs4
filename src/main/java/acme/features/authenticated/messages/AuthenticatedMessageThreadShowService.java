@@ -2,6 +2,7 @@
 package acme.features.authenticated.messages;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import acme.entities.message.MessageThread;
 import acme.framework.components.Model;
@@ -10,6 +11,7 @@ import acme.framework.entities.Authenticated;
 import acme.framework.entities.Principal;
 import acme.framework.services.AbstractShowService;
 
+@Service
 public class AuthenticatedMessageThreadShowService implements AbstractShowService<Authenticated, MessageThread> {
 
 	@Autowired
