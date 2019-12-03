@@ -1,5 +1,5 @@
 
-package acme.features.auditor;
+package acme.features.auditor.job;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,7 +21,11 @@ public class AuditorJobShowService implements AbstractShowService<Auditor, Job> 
 	public boolean authorise(final Request<Job> request) {
 		assert request != null;
 
-		return true;
+		int jobId = request.getModel().getInteger("id");
+		Job job = this.repository.findOneJobById(jobId);
+		boolean result = job.getIsActive();
+
+		return result;
 	}
 
 	@Override
@@ -30,7 +34,7 @@ public class AuditorJobShowService implements AbstractShowService<Auditor, Job> 
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "reference", "status", "title", "deadline", "salary", "moreInfo", "descriptor.description");
+		request.unbind(entity, model, "reference", "title", "deadline", "salary", "moreInfo", "descriptor.description");
 
 	}
 

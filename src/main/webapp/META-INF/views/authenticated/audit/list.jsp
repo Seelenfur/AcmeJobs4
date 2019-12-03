@@ -17,8 +17,8 @@
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
 <acme:list>
-	<acme:list-column code="authenticated.duty.list.label.weekPercentage" path="weekPercentage" width="15%" />
-	<acme:list-column code="authenticated.duty.list.label.title" path="title" width="85%" />
+	<acme:list-column code="authenticated.audit.list.label.creationMoment" path="creationMoment" width="15%" />
+	<acme:list-column code="authenticated.audit.list.label.title" path="title" width="85%" />
 </acme:list>
 
 

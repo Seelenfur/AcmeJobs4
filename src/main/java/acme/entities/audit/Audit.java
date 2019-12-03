@@ -1,5 +1,5 @@
 
-package acme.entities.auditorRecords;
+package acme.entities.audit;
 
 import java.util.Date;
 
@@ -13,7 +13,6 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 
 import acme.entities.jobs.Job;
-import acme.entities.jobs.JobStatus;
 import acme.entities.roles.Auditor;
 import acme.framework.entities.DomainEntity;
 import lombok.Getter;
@@ -22,7 +21,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class AuditorRecord extends DomainEntity {
+public class Audit extends DomainEntity {
 
 	private static final long	serialVersionUID	= 1L;
 
@@ -30,7 +29,7 @@ public class AuditorRecord extends DomainEntity {
 	private String				title;
 
 	@NotNull
-	private JobStatus			status;
+	private AuditStatus			status;
 
 	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)

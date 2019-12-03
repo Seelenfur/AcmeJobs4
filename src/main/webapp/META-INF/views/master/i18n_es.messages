@@ -117,9 +117,8 @@ master.menu.sponsor.non-comercial-banner.list-mine = Listar mis Banners no Comer
 # master.menu.auditor ##########################################################
 
 master.menu.auditor = Auditor
-master.menu.auditor.job.list-mine = Listar mis audiciones
-master.menu.auditor.job.list-not-mine = Listar otras audiciones
-
+master.menu.auditor.job.list-mine = Listar mis trabajos auditados
+master.menu.auditor.job.list-not-mine = Listar mis trabajos no auditados
 
 # master.menu.user-account ####################################################
 

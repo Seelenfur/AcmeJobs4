@@ -591,24 +591,21 @@
 		<property name="userAccount" ref="auditor2UserAccount" />
 	</bean>
 	
-	<bean name="auditorRecord1" class="acme.entities.auditorRecords.AuditorRecord">
-		<property name="title" value="AuditorRecord1" />
+	<bean name="audit1" class="acme.entities.audit.Audit">
+		<property name="title" value="AuditRecord1" />
 		<property name="creationMoment" value="2018/12/11 23:59" />
 		<property name="status" value="PUBLISHED" />
-		<property name="body" value="Some auditorRecord1's things" />
+		<property name="body" value="Some auditRecord1's things" />
 		<property name="job" ref="job1" />
 		<property name="auditor" ref="auditor1Auditor"/>	
 	</bean>
 	
-	<bean name="auditorRecord2" class="acme.entities.auditorRecords.AuditorRecord">
-		<property name="title" value="AuditorRecord2" />
+	<bean name="audit2" class="acme.entities.audit.Audit">
+		<property name="title" value="AuditRecord2" />
 		<property name="creationMoment" value="2019/10/27 23:59" />
 		<property name="status" value="PUBLISHED" />
-		<property name="body" value="Some auditorRecord2's things" />
-		<property name="job" ref="job2" />
+		<property name="body" value="Some auditRecord2's things" />
+		<property name="job" ref="job4" />
 		<property name="auditor" ref="auditor2Auditor"/>
 	</bean>
-	
-	
-	
 </beans>

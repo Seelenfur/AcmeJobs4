@@ -17,9 +17,9 @@
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
 <acme:list>
-	<acme:list-column code="auditor.auditorRecord.list.label.reference" path="reference" width="10%" />
-	<acme:list-column code="auditor.auditorRecord.list.label.deadline" path="deadline" width="10%" />
-	<acme:list-column code="auditor.auditorRecord.list.label.title" path="title" width="80%" />
+	<acme:list-column code="auditor.job.list.label.reference" path="reference" width="10%" />
+	<acme:list-column code="auditor.job.list.label.deadline" path="deadline" width="10%" />
+	<acme:list-column code="auditor.job.list.label.title" path="title" width="80%" />
 </acme:list>
 
 
