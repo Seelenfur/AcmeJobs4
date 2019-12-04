@@ -24,8 +24,7 @@ public class AuthenticatedDutyShowService implements AbstractShowService<Authent
 
 		int dutyId = request.getModel().getInteger("id");
 		Duty duty = this.repository.findOneDutyById(dutyId);
-		Integer descriptorId = duty.getDescriptor().getId();
-		Job job = this.repository.findOneJobByDescriptorId(descriptorId);
+		Job job = this.repository.findOneJobByDutyId(duty.getId());
 		boolean result = job.getIsActive();
 
 		return result;

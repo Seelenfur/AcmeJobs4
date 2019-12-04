@@ -26,6 +26,6 @@ public class Descriptor extends DomainEntity {
 	// Relationships
 
 	@NotNull
-	@OneToMany(mappedBy = "descriptor")
+	@OneToMany()
 	private Collection<@Valid Duty>	duties;
 }

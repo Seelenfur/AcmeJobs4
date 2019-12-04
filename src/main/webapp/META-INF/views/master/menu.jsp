@@ -68,7 +68,7 @@
 
 			<acme:menu-suboption code="master.menu.administrator.list-company" action="/administrator/company/list" />
 			<acme:menu-suboption code="master.menu.administrator.create-company" action="/administrator/company/create" />
-      
+
 			<acme:menu-suboption code="master.menu.administrator.list-challenge" action="/administrator/challenge/list" />
 			<acme:menu-suboption code="master.menu.administrator.create-challenge" action="/administrator/challenge/create" />
 
@@ -89,6 +89,10 @@
 			<acme:menu-separator />
 			<acme:menu-suboption code="master.menu.administrator.shutdown" action="/master/shutdown" />
 		</acme:menu-option>
+		
+		<acme:menu-option code="master.menu.authenticated" access="isAuthenticated()">
+			<acme:menu-suboption code="master.menu.authenticated.list-jobs" action="/authenticated/job/list" />
+		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.provider" access="hasRole('Provider')">
 			<acme:menu-suboption code="master.menu.provider.create-request" action="/provider/request/create" />
@@ -108,16 +112,15 @@
 		<acme:menu-option code="master.menu.worker" access="hasRole('Worker')">
 			<acme:menu-suboption code="master.menu.worker.application.list-mine" action="/worker/application/list-mine" />
 		</acme:menu-option>
-		
+
 		<acme:menu-option code="master.menu.sponsor" access="hasRole('Sponsor')">
 			<acme:menu-suboption code="master.menu.sponsor.comercial-banner.list-mine" action="/sponsor/commercial-banner/list-mine" />
 			<acme:menu-suboption code="master.menu.sponsor.non-comercial-banner.list-mine" action="/sponsor/non-commercial-banner/list-mine" />
-     </acme:menu-option>
+		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.auditor" access="hasRole('Auditor')">
 			<acme:menu-suboption code="master.menu.auditor.job.list-mine" action="/auditor/job/list-mine" />
 			<acme:menu-suboption code="master.menu.auditor.job.list-not-mine" action="/auditor/job/list-not-mine" />
-
 		</acme:menu-option>
 	</acme:menu-left>
 
@@ -127,7 +130,6 @@
 
 		<acme:menu-option code="master.menu.user-account" access="isAuthenticated()">
 
-			<acme:menu-suboption code="master.menu.user-account.list-jobs" action="/authenticated/job/list" />
 			<acme:menu-suboption code="master.menu.list-announcement" action="/authenticated/announcement/list" />
 			<acme:menu-suboption code="master.menu.list-top-investors" action="/authenticated/investor/list-top" />
 			<acme:menu-suboption code="master.menu.list-investor" action="/authenticated/investor/list" />

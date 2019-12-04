@@ -60,6 +60,11 @@ master.menu.anonymous.create-bulletin-3 = Publicar en boletín de María
 master.menu.anonymous.list-bulletin-4 = Boletín de Sergio
 master.menu.anonymous.create-bulletin-4 = Publicar en boletín de Sergio
 
+# master.menu.authenticated ###################################################
+
+master.menu.authenticated = Autenticado
+
+master.menu.authenticated.list-jobs = Listar trabajos
 
 # master.menu.administrator ###################################################
 
@@ -128,8 +133,6 @@ master.menu.user-account.provider = Datos de proveedor
 master.menu.user-account.become-provider = Hazte proveedor
 master.menu.user-account.consumer = Datos de consumidor
 master.menu.user-account.become-consumer = Hazte consumidor
-
-master.menu.user-account.list-jobs = Listar trabajos
 
 ﻿# master.footer ###############################################################
 

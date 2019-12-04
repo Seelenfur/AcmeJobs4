@@ -16,10 +16,5 @@
 	<acme:form-textarea code="employer.application.form.label.skills" path="skills" readonly="true" />
 	<acme:form-textarea code="employer.application.form.label.qualifications" path="qualifications" readonly="true" />
 	<acme:form-textbox code="employer.application.form.label.job.reference" path="job.reference" readonly="true" />
-
-	<acme:form-submit test="${command == 'show' && requestScope['status'] == 'PENDING'}" code="employer.application.form.button.update"
-		action="update" />
-	<acme:form-submit test="${command == 'update' && requestScope['status'] == 'PENDING'}" code="employer.application.form.button.update"
-		action="update" />
 	<acme:form-return code="employer.application.form.button.return" />
 </acme:form>
