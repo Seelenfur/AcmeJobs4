@@ -729,9 +729,17 @@
 
 	<bean name="sponsor1Sponsor" class="acme.entities.roles.Sponsor">
 		<property name="organisationName" value="Mojang" />
-		<property name="creditCard" value="4570197021809872" />
+		<property name="creditCard" ref="sponsor1CreditCard" />
 		<property name="userAccount" ref="sponsor1UserAccount" />
 	</bean>
+
+	<bean name="sponsor1CreditCard" class="acme.entities.creditCard.CreditCard">
+		<property name="creditCardNumber" value="5224746025394443" />
+		<property name="creditCardCvv" value="957" />
+		<property name="creditCardMonth" value="12" />
+		<property name="creditCardYear" value="2020" />
+	</bean>
+
 	<bean name="sponsor1Authenticated" class="acme.framework.entities.Authenticated">
 		<property name="userAccount" ref="sponsor1UserAccount" />
 	</bean>
@@ -757,7 +765,9 @@
 
 	<bean name="sponsor2Sponsor" class="acme.entities.roles.Sponsor">
 		<property name="organisationName" value="OneLogic" />
-		<property name="creditCard" value="4299678055379494" />
+		<property name="creditCard">
+			<null />
+		</property>
 		<property name="userAccount" ref="sponsor2UserAccount" />
 	</bean>
 

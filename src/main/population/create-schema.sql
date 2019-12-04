@@ -312,8 +312,8 @@
        `id` integer not null,
         `version` integer not null,
         `user_account_id` integer,
-        `credit_card` varchar(255),
         `organisation_name` varchar(255),
+        `credit_card_id` integer,
         primary key (`id`)
     ) engine=InnoDB;
 
@@ -472,6 +472,11 @@ create index IDXnfbpi0hue0rf52f7hot7cxy9q on `req` (`deadline`);
        add constraint FK_b1gwnjqm6ggy9yuiqm0o4rlmd 
        foreign key (`user_account_id`) 
        references `user_account` (`id`);
+
+    alter table `sponsor` 
+       add constraint `FK28mvxtnmfjcwiw34vs8ryqkpa` 
+       foreign key (`credit_card_id`) 
+       references `credit_card` (`id`);
 
     alter table `sponsor` 
        add constraint FK_20xk0ev32hlg96kqynl6laie2 
