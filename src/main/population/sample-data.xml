@@ -210,7 +210,7 @@
 		<property name="reward" value="1000€" />
 		<property name="ticker" value="RXZXZ-01234" />
 	</bean>
-	
+
 	<!-- Commercial Banner -->
 
 	<bean id="commercialBanner01" class="acme.entities.banner.CommercialBanner">
@@ -357,6 +357,35 @@
 		<property name="userAccount" ref="worker1UserAccount" />
 	</bean>
 
+	<bean name="worker2UserAccount" class="acme.framework.entities.UserAccount">
+		<property name="username" value="worker2" />
+		<property name="password" value="worker2" />
+		<property name="enabled" value="true" />
+		<property name="identity">
+			<bean class="acme.datatypes.UserIdentity">
+				<property name="name" value="Worker" />
+				<property name="surname" value="Two" />
+				<property name="email" value="worker2@acme.com" />
+			</bean>
+		</property>
+		<property name="roles">
+			<list>
+				<ref bean="worker2Worker" />
+				<ref bean="worker2Authenticated" />
+			</list>
+		</property>
+	</bean>
+
+	<bean name="worker2Worker" class="acme.entities.roles.Worker">
+		<property name="qualifications" value="Qualification 1, qualification 2..." />
+		<property name="skills" value="Fast" />
+		<property name="userAccount" ref="worker2UserAccount" />
+	</bean>
+
+	<bean name="worker2Authenticated" class="acme.framework.entities.Authenticated">
+		<property name="userAccount" ref="worker2UserAccount" />
+	</bean>
+
 	<!-- Jobs -->
 
 	<bean name="job1" class="acme.entities.jobs.Job">
@@ -460,7 +489,7 @@
 		<property name="reference" value="EMP1-JOB5" />
 		<property name="status" value="PUBLISHED" />
 		<property name="title" value="Title 5" />
-		<property name="deadline" value="2030/12/11 23:59" />
+		<property name="deadline" value="2018/12/11 23:59" />
 		<property name="salary" value="€ 15,000.98" />
 		<property name="moreInfo" value="http://www.example.com" />
 		<property name="descriptor" ref="job5Descriptor" />
@@ -489,7 +518,7 @@
 	</bean>
 
 	<bean name="application2" class="acme.entities.jobs.Application">
-		<property name="reference" value="EMP1-JOB2:WOR2" />
+		<property name="reference" value="EMP1-JOB2:WOR1" />
 		<property name="moment" value="2018/12/11 23:59" />
 		<property name="status" value="REJECTED" />
 		<property name="statement" value="Example" />
@@ -497,6 +526,39 @@
 		<property name="qualifications" value="A lot" />
 		<property name="worker" ref="worker1Worker" />
 		<property name="job" ref="job2" />
+	</bean>
+
+	<bean name="application3" class="acme.entities.jobs.Application">
+		<property name="reference" value="EMP1-JOB4:WOR1" />
+		<property name="moment" value="2018/12/11 23:59" />
+		<property name="status" value="REJECTED" />
+		<property name="statement" value="Example" />
+		<property name="skills" value="A lot" />
+		<property name="qualifications" value="A lot" />
+		<property name="worker" ref="worker1Worker" />
+		<property name="job" ref="job4" />
+	</bean>
+
+	<bean name="application4" class="acme.entities.jobs.Application">
+		<property name="reference" value="EMP1-JOB2:WOR2" />
+		<property name="moment" value="2018/12/11 23:59" />
+		<property name="status" value="REJECTED" />
+		<property name="statement" value="Example" />
+		<property name="skills" value="A lot" />
+		<property name="qualifications" value="A lot" />
+		<property name="worker" ref="worker2Worker" />
+		<property name="job" ref="job2" />
+	</bean>
+
+	<bean name="application5" class="acme.entities.jobs.Application">
+		<property name="reference" value="EMP1-JOB4:WOR2" />
+		<property name="moment" value="2018/12/11 23:59" />
+		<property name="status" value="ACCEPTED" />
+		<property name="statement" value="Example" />
+		<property name="skills" value="A lot" />
+		<property name="qualifications" value="A lot" />
+		<property name="worker" ref="worker2Worker" />
+		<property name="job" ref="job4" />
 	</bean>
 
 	<!-- Auditors -->

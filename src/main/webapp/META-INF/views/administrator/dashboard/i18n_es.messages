@@ -14,3 +14,8 @@ administrator.dashboard.form.label.maxRewardOfActiveOffers = Recompensa máxima 
 administrator.dashboard.form.label.minRewardOfActiveOffers = Recompensa mínima de las ofertas activas
 administrator.dashboard.form.label.avgRewardOfActiveOffers = Media de las recompensas de las ofertas activas
 administrator.dashboard.form.label.standardDeviationRewardOfActiveOffers = Desviación típica de las recompensas de las ofertas activas
+
+administrator.dashboard.form.label.jobs = Trabajos
+administrator.dashboard.form.label.avgJobsPerEmployer = Número medio de trabajos por empleador
+administrator.dashboard.form.label.avgApplicationsPerEmployer = Número medio de solicitudes por empleador
+administrator.dashboard.form.label.avgApplicationsPerWorker = Número medio de solicitudes por trabajador

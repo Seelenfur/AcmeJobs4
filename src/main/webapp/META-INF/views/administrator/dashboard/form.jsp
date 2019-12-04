@@ -25,4 +25,10 @@
 		<acme:form-double code="administrator.dashboard.form.label.standardDeviationRewardOfActiveOffers" path="standardDeviationRewardOfActiveOffers"/>
 	</acme:form-panel>
 
+	<acme:form-panel code="administrator.dashboard.form.label.jobs">
+		<acme:form-double code="administrator.dashboard.form.label.avgJobsPerEmployer" path="avgJobsPerEmployer"/>
+		<acme:form-double code="administrator.dashboard.form.label.avgApplicationsPerEmployer" path="avgApplicationsPerEmployer"/>
+		<acme:form-double code="administrator.dashboard.form.label.avgApplicationsPerWorker" path="avgApplicationsPerWorker"/>
+	</acme:form-panel>
+
 </acme:form>

@@ -60,6 +60,13 @@
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">
+
+			<acme:menu-suboption code="master.menu.administrator.dashboard" action="/administrator/dashboard/listing" />
+			<acme:menu-suboption code="master.menu.administrator.chart" action="/administrator/chart/chart" />
+			<acme:menu-suboption code="master.menu.administrator.jobs-chart" action="/administrator/jobs-chart/chart" />
+
+			<acme:menu-separator />
+
 			<acme:menu-suboption code="master.menu.administrator.list-announcement" action="/administrator/announcement/list" />
 			<acme:menu-suboption code="master.menu.administrator.create-announcement" action="/administrator/announcement/create" />
 
@@ -79,9 +86,9 @@
 				action="/administrator/non-commercial-banner/list" />
 			<acme:menu-suboption code="master.menu.administrator.non-commercial-banner.create"
 				action="/administrator/non-commercial-banner/create" />
+
 			<acme:menu-separator />
-			<acme:menu-suboption code="master.menu.administrator.dashboard" action="/administrator/dashboard/listing" />
-			<acme:menu-suboption code="master.menu.administrator.chart" action="/administrator/chart/chart" />
+
 			<acme:menu-suboption code="master.menu.administrator.list-customisation-parameters"
 				action="/administrator/customisation-parameters/list" />
 			<acme:menu-separator />
@@ -89,7 +96,7 @@
 			<acme:menu-separator />
 			<acme:menu-suboption code="master.menu.administrator.shutdown" action="/master/shutdown" />
 		</acme:menu-option>
-		
+
 		<acme:menu-option code="master.menu.authenticated" access="isAuthenticated()">
 			<acme:menu-suboption code="master.menu.authenticated.list-jobs" action="/authenticated/job/list" />
 			<acme:menu-suboption code="master.menu.authenticated.list-my-message-threads" action="/authenticated/message-thread/list-mine" />
