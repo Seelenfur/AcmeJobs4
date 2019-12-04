@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.jobs.Job;
-import acme.entities.jobs.JobStatus;
 import acme.entities.roles.Auditor;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
@@ -36,7 +35,7 @@ public class AuditorJobListNotMineService implements AbstractListService<Auditor
 		Principal principal;
 
 		principal = request.getPrincipal();
-		result = this.repository.findOthersByAuditorId(principal.getActiveRoleId(), JobStatus.PUBLISHED);
+		result = this.repository.findOthersByAuditorId(principal.getActiveRoleId());
 
 		return result;
 	}

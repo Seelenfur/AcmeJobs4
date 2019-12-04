@@ -31,7 +31,8 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		assert model != null;
 
 		request.unbind(entity, model, "totalNumberOfAnnouncements", "totalNumberOfCompanyRecords", "totalNumberOfInvestorRecords", "maxRewardOfActiveRequests", "minRewardOfActiveRequests", "avgRewardOfActiveRequests",
-			"standardDeviationRewardOfActiveRequests", "maxRewardOfActiveOffers", "minRewardOfActiveOffers", "avgRewardOfActiveOffers", "standardDeviationRewardOfActiveOffers");
+			"standardDeviationRewardOfActiveRequests", "maxRewardOfActiveOffers", "minRewardOfActiveOffers", "avgRewardOfActiveOffers", "standardDeviationRewardOfActiveOffers", "avgJobsPerEmployer", "avgApplicationsPerEmployer",
+			"avgApplicationsPerWorker");
 	}
 
 	@Override
@@ -53,6 +54,10 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		result.setMinRewardOfActiveOffers((Double) this.repository.findMinRewardOfActiveOffers()[0]);
 		result.setAvgRewardOfActiveOffers((Double) this.repository.findAvgRewardOfActiveOffers()[0]);
 		result.setStandardDeviationRewardOfActiveOffers((Double) this.repository.findStandardDeviationRewardOfActiveOffers()[0]);
+
+		result.setAvgJobsPerEmployer((Double) this.repository.findAvgJobsPerEmployer()[0]);
+		result.setAvgApplicationsPerEmployer((Double) this.repository.findAvgApplicationsPerEmployer()[0]);
+		result.setAvgApplicationsPerWorker((Double) this.repository.findAvgApplicationsPerWorker()[0]);
 
 		return result;
 	}

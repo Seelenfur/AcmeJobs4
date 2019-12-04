@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.audit.Audit;
-import acme.entities.audit.AuditStatus;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.entities.Authenticated;
@@ -35,7 +34,7 @@ public class AuthenticatedAuditListService implements AbstractListService<Authen
 		int id;
 
 		id = request.getModel().getInteger("id");
-		result = this.repository.findManyByJobId(id, AuditStatus.PUBLISHED);
+		result = this.repository.findManyPublishedByJobId(id);
 
 		return result;
 	}

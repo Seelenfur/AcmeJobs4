@@ -1,5 +1,5 @@
 
-package acme.entities.creditcard;
+package acme.entities.creditCard;
 
 import javax.persistence.Entity;
 import javax.validation.constraints.NotBlank;

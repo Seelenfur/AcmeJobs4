@@ -14,3 +14,8 @@ administrator.dashboard.form.label.maxRewardOfActiveOffers = Maximum of the rewa
 administrator.dashboard.form.label.minRewardOfActiveOffers = Minimum of the rewards of active offers
 administrator.dashboard.form.label.avgRewardOfActiveOffers = Average of the rewards of active offers
 administrator.dashboard.form.label.standardDeviationRewardOfActiveOffers = Standard deviation of the rewards of active offers
+
+administrator.dashboard.form.label.jobs = Jobs
+administrator.dashboard.form.label.avgJobsPerEmployer = Average number of jobs per employer
+administrator.dashboard.form.label.avgApplicationsPerEmployer = Average number of applications per employer
+administrator.dashboard.form.label.avgApplicationsPerWorker = Average number of applications per worker
