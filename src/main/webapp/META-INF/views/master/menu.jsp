@@ -92,6 +92,7 @@
 		
 		<acme:menu-option code="master.menu.authenticated" access="isAuthenticated()">
 			<acme:menu-suboption code="master.menu.authenticated.list-jobs" action="/authenticated/job/list" />
+			<acme:menu-suboption code="master.menu.authenticated.list-my-message-threads" action="/authenticated/message-thread/list-mine" />
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.provider" access="hasRole('Provider')">

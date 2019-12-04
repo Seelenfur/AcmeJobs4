@@ -17,9 +17,9 @@
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
 <acme:list>
-	<acme:list-column code="authenticated.message-thread.list.label.moment" path="moment" width="15%" />
-	<acme:list-column code="authenticated.message-thread.list.label.creator" path="creator.userAccount.username" width="15%" />
-	<acme:list-column code="authenticated.message-thread.list.label.title" path="title" width="70%" />
+	<acme:list-column code="authenticated.message-thread.list.label.moment" path="moment" width="10%" />
+	<acme:list-column code="authenticated.message-thread.list.label.creator" path="creator.userAccount.username" width="10%" />
+	<acme:list-column code="authenticated.message-thread.list.label.title" path="title" width="80%" />
 </acme:list>
 
 

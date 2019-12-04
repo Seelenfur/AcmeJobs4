@@ -6,7 +6,7 @@
 <acme:form>
 	<acme:form-textbox code="authenticated.message.form.label.title" path="title"/>
 	<acme:form-moment code="authenticated.message.form.label.moment" path="moment"/>
-	<acme:form-textbox code="authenticated.message.form.label.creator" path="creator"/>
+	<acme:form-textbox code="authenticated.message.form.label.creator" path="creator.userAccount.username"/>
 	<acme:form-textarea code="authenticated.message.form.label.body" path="body"/>
 	<acme:form-textbox code="authenticated.message.form.label.tags" path="tags"/>
 	

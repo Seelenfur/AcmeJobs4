@@ -1,12 +1,10 @@
 
 package acme.entities.message;
 
-import java.util.Collection;
 import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.Valid;
@@ -38,13 +36,13 @@ public class Message extends DomainEntity {
 	private String				body;
 
 	@Pattern(regexp = "^[^,]+([,][^,]+)*$")
-	private Collection<String>	tags;
+	private String				tags;
 
 	// Relationships
 
 	@NotNull
 	@Valid
-	@OneToOne(optional = false)
+	@ManyToOne(optional = false)
 	private Authenticated		creator;
 
 	@NotNull

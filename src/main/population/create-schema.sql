@@ -228,7 +228,7 @@
         `moment` datetime(6),
         `tags` varchar(255),
         `title` varchar(255),
-        `authenticated_id` integer not null,
+        `creator_id` integer not null,
         `message_thread_id` integer not null,
         primary key (`id`)
     ) engine=InnoDB;
@@ -238,6 +238,7 @@
         `version` integer not null,
         `moment` datetime(6),
         `title` varchar(255),
+        `creator_id` integer not null,
         primary key (`id`)
     ) engine=InnoDB;
 
@@ -448,14 +449,19 @@ create index IDXnfbpi0hue0rf52f7hot7cxy9q on `req` (`deadline`);
        references `employer` (`id`);
 
     alter table `message` 
-       add constraint `FK3ny0h1379q528toyokq81noiu` 
-       foreign key (`authenticated_id`) 
+       add constraint `FKd8wmf6nghttk2h9gq7v8p9lqo` 
+       foreign key (`creator_id`) 
        references `authenticated` (`id`);
 
     alter table `message` 
        add constraint `FKn5adlx3oqjna7aupm8gwg3fuj` 
        foreign key (`message_thread_id`) 
        references `message_thread` (`id`);
+
+    alter table `message_thread` 
+       add constraint `FK3fa4h4tfet2kocvatib2ovhsa` 
+       foreign key (`creator_id`) 
+       references `authenticated` (`id`);
 
     alter table `non_commercial_banner` 
        add constraint FK_2l8gpcwh19e7jj513or4r9dvb 
