@@ -65,6 +65,7 @@ master.menu.anonymous.create-bulletin-4 = Publish in Sergio's bulletin
 master.menu.authenticated = Authenticated
 
 master.menu.authenticated.list-jobs = List jobs
+master.menu.authenticated.list-my-message-threads = List my threads
 
 # master.menu.administrator ###################################################
 

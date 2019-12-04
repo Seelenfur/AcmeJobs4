@@ -61,11 +61,15 @@
 
     alter table `message` 
        drop 
-       foreign key `FK3ny0h1379q528toyokq81noiu`;
+       foreign key `FKd8wmf6nghttk2h9gq7v8p9lqo`;
 
     alter table `message` 
        drop 
        foreign key `FKn5adlx3oqjna7aupm8gwg3fuj`;
+
+    alter table `message_thread` 
+       drop 
+       foreign key `FK3fa4h4tfet2kocvatib2ovhsa`;
 
     alter table `non_commercial_banner` 
        drop 
