@@ -344,27 +344,29 @@
 
     insert into `hibernate_sequence` values ( 1 );
 create index IDXnhikaa2dj3la6o2o7e9vo01y0 on `announcement` (`moment`);
+create index IDX2q2747fhp099wkn3j2yt05fhs on `application` (`status`);
 
     alter table `application` 
        add constraint UK_ct7r18vvxl5g4c4k7aefpa4do unique (`reference`);
+create index IDX56unvc9gsmb8lr6b24a2b8ywk on `audit` (`status`);
 create index IDXnr284tes3x8hnd3h716tmb3fr on `challenge` (`deadline`);
 create index IDXbm7mwffwxwiukjmbmt9t1qnnu on `company` (`sector`);
 
     alter table `descriptor_duty` 
        add constraint UK_kvr5rclgwa51d625rmx13ke96 unique (`duties_id`);
 create index IDX1slmmcr1g0wv9jbgun6rny0oy on `investor` (`sector`);
+create index IDXal59yunywnkwi09ps7jxpr18c on `job` (`status`, `deadline`);
+create index IDX28ur9xm72oo1df9g14xhnh8h3 on `job` (`status`);
 
     alter table `job` 
        add constraint UK_qpodqtu8nvqkof3olnqnqcv2l unique (`descriptor_id`);
 
     alter table `job` 
        add constraint UK_7jmfdvs0b0jx7i33qxgv22h7b unique (`reference`);
-create index IDXcp4664f36sgqsd0ihmirt0w0 on `offer` (`ticker`);
 create index IDXq2o9psuqfuqmq59f0sq57x9uf on `offer` (`deadline`);
 
     alter table `offer` 
        add constraint UK_iex7e8fs0fh89yxpcnm1orjkm unique (`ticker`);
-create index IDXqposky6iaf2i88205ay895w6f on `req` (`ticker`);
 create index IDXnfbpi0hue0rf52f7hot7cxy9q on `req` (`deadline`);
 
     alter table `req` 

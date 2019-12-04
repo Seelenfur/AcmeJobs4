@@ -132,7 +132,7 @@ CREATE TABLE `application` (
 
 LOCK TABLES `application` WRITE;
 /*!40000 ALTER TABLE `application` DISABLE KEYS */;
-INSERT INTO `application` VALUES (698,0,'2018-12-11 22:59:00.000000','A lot','EMP1-JOB1:WOR1','A lot','Example',0,693,658),(699,0,'2018-12-11 22:59:00.000000','A lot','EMP1-JOB2:WOR1','A lot','Example',2,694,658),(700,0,'2018-12-11 22:59:00.000000','A lot','EMP1-JOB4:WOR1','A lot','Example',2,696,658),(701,0,'2018-12-11 22:59:00.000000','A lot','EMP1-JOB2:WOR2','A lot','Example',2,694,661),(702,0,'2018-12-11 22:59:00.000000','A lot','EMP1-JOB4:WOR2','A lot','Example',1,696,661);
+INSERT INTO `application` VALUES (698,0,'2018-12-11 22:59:00.000000','A lot','EMP1-JOB1:WOR1','A lot','Example',0,693,658),(699,0,'2018-12-11 22:59:00.000000','A lot','EMP2-JOB4:WOR1','A lot','Example',2,696,658),(700,0,'2018-12-11 22:59:00.000000','A lot','EMP1-JOB5:WOR1','A lot','Example',2,697,658),(701,0,'2018-12-11 22:59:00.000000','A lot','EMP1-JOB5:WOR2','A lot','Example',2,697,661),(702,0,'2018-12-11 22:59:00.000000','A lot','EMP2-JOB4:WOR2','A lot','Example',1,696,661);
 /*!40000 ALTER TABLE `application` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -198,39 +198,6 @@ LOCK TABLES `auditor` WRITE;
 /*!40000 ALTER TABLE `auditor` DISABLE KEYS */;
 INSERT INTO `auditor` VALUES (673,0,671,'firm1','responsabilityStatement1'),(675,0,672,'firm2','responsabilityStatement2');
 /*!40000 ALTER TABLE `auditor` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `auditor_record`
---
-
-DROP TABLE IF EXISTS `auditor_record`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `auditor_record` (
-  `id` int(11) NOT NULL,
-  `version` int(11) NOT NULL,
-  `body` varchar(255) DEFAULT NULL,
-  `creation_moment` datetime(6) DEFAULT NULL,
-  `status` int(11) DEFAULT NULL,
-  `title` varchar(255) DEFAULT NULL,
-  `auditor_id` int(11) NOT NULL,
-  `job_id` int(11) NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `FKjx5w0xtdjllmdj2el2rlx4wdj` (`auditor_id`),
-  KEY `FKcpwoo69w5dhtr8nvg0xhl9qv9` (`job_id`),
-  CONSTRAINT `FKcpwoo69w5dhtr8nvg0xhl9qv9` FOREIGN KEY (`job_id`) REFERENCES `job` (`id`),
-  CONSTRAINT `FKjx5w0xtdjllmdj2el2rlx4wdj` FOREIGN KEY (`auditor_id`) REFERENCES `auditor` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `auditor_record`
---
-
-LOCK TABLES `auditor_record` WRITE;
-/*!40000 ALTER TABLE `auditor_record` DISABLE KEYS */;
-/*!40000 ALTER TABLE `auditor_record` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -1029,7 +996,7 @@ CREATE TABLE `user_account` (
 
 LOCK TABLES `user_account` WRITE;
 /*!40000 ALTER TABLE `user_account` DISABLE KEYS */;
-INSERT INTO `user_account` VALUES (1,0,_binary '\0','john.doe@acme.com','John','Doe','$2a$05$D7.LOu5zbSZV63wmfEPwCOBHzGpML9GL/HXDMmI66CxtYNcF3j/4W','anonymous'),(3,0,_binary '','administrator@acme.com','Administrator','Acme.com','$2a$05$0zVBLEbPRASw2jirD5s4Z.MdzL0pHkaVjJKrrEqf31TYkt6Gv64Oa','administrator'),(651,0,_binary '','employer1@acme.com','Employer','One','$2a$05$Rrv4zDuq429NV8D2Y1pWx.7cNzkR5fhv/gt3AGriTMHKsGoTd6Y5y','employer1'),(654,0,_binary '','employer2@acme.com','Employer','Two','$2a$05$vEwHH0S52IMcAsJNjvljI.sLcp9/qSwRKrmQuR1YN3dBeQbTFlpi6','employer2'),(657,0,_binary '','worker1@acme.com','Worker','One','$2a$05$gomMjkrdLBZ/eXeOvQbkZuvla/indn7MVg4GRo928vd8adj8UvaqO','worker1'),(660,0,_binary '','worker2@acme.com','Worker','Two','$2a$05$cFKqodgSDbp37fee9hIpjOKl.XFI2jRfN.m0i7LnWFppQo6xTh/la','worker2'),(671,0,_binary '','auditor1@acme.com','Auditor','One','$2a$05$2wnHsPoY9txER/6CuiaHz.wuenYy.Mmx78Wdc5voQxhcQwfh9qL3e','auditor1'),(672,0,_binary '','auditor2@acme.com','Auditor','Second','$2a$05$h6twXsFmKJsBPv3d6biLMuolBGEDw0BQRknxLuwowqWOBbbcA9P2e','auditor2'),(684,0,_binary '','sponsor1@acme.com','Sponsor','Uno','$2a$05$vKRYn/ZicDB7IdvzFKc0SePaxPOmioM8ccw33/ofpuBocUwVEesZO','sponsor1'),(688,0,_binary '','sponsor2@acme.com','Sponsor','Dos','$2a$05$17PXrMW4.J1z/te.bcayOecnz5LNizxBcWH9f/J1Zm7pSR7qYyx7.','sponsor2');
+INSERT INTO `user_account` VALUES (1,0,_binary '\0','john.doe@acme.com','John','Doe','$2a$05$fR2bTKI.W2qU4Ey7M9MeROYeeYOh.C4XstKCvMOaFNzLZquJQc0fW','anonymous'),(3,0,_binary '','administrator@acme.com','Administrator','Acme.com','$2a$05$Kt5PFaah/Crxm7GkuW6vOunMyzYzjoITvhTjL6AX/rnFMK6Xuislm','administrator'),(651,0,_binary '','employer1@acme.com','Employer','One','$2a$05$oxv.RHsBaoi0CVhulGKp7.qJ4W6YGci7S9GkfFX/SLJ9E9.D2DMaG','employer1'),(654,0,_binary '','employer2@acme.com','Employer','Two','$2a$05$iPkgw1EYzWckVI4hjkbpZ.6dfcVnwKMXS51.x4I1NEY7v.MkjoxLu','employer2'),(657,0,_binary '','worker1@acme.com','Worker','One','$2a$05$fV8rIeene8WIdNmXag4NA.Gfmtrk.Kp017BVjgnYZ1nNHdxVhWPDm','worker1'),(660,0,_binary '','worker2@acme.com','Worker','Two','$2a$05$EOYSLXY5Nz.ezxCkioLTkuOgyjeX./XW0/.y0DQ.dskAGXyaHtao6','worker2'),(671,0,_binary '','auditor1@acme.com','Auditor','One','$2a$05$RWmY4C/RZ.tz0d0/pR6SMOag4u4ZvOn0XlQpABLut5mnKvHGlsdHS','auditor1'),(672,0,_binary '','auditor2@acme.com','Auditor','Second','$2a$05$oiT.wUeeipMXyGuaGEtI8OaSbOPsQy6VArpHcC9NHr06IFiqWii3O','auditor2'),(684,0,_binary '','sponsor1@acme.com','Sponsor','Uno','$2a$05$UDW5I8TLlGXWRHOKfukD7OCA1wB3tUD8Gz.QKibJ629vfmTYw8X5S','sponsor1'),(688,0,_binary '','sponsor2@acme.com','Sponsor','Dos','$2a$05$H3dlcq.YofRO.uW2xpbUiuSmZ7TqUU7c3op4tuW5OZOmaLzdCoUSu','sponsor2');
 /*!40000 ALTER TABLE `user_account` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1071,4 +1038,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-12-04 21:48:30
+-- Dump completed on 2019-12-04 23:27:18

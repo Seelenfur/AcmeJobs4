@@ -518,18 +518,7 @@
 	</bean>
 
 	<bean name="application2" class="acme.entities.jobs.Application">
-		<property name="reference" value="EMP1-JOB2:WOR1" />
-		<property name="moment" value="2018/12/11 23:59" />
-		<property name="status" value="REJECTED" />
-		<property name="statement" value="Example" />
-		<property name="skills" value="A lot" />
-		<property name="qualifications" value="A lot" />
-		<property name="worker" ref="worker1Worker" />
-		<property name="job" ref="job2" />
-	</bean>
-
-	<bean name="application3" class="acme.entities.jobs.Application">
-		<property name="reference" value="EMP1-JOB4:WOR1" />
+		<property name="reference" value="EMP2-JOB4:WOR1" />
 		<property name="moment" value="2018/12/11 23:59" />
 		<property name="status" value="REJECTED" />
 		<property name="statement" value="Example" />
@@ -539,19 +528,30 @@
 		<property name="job" ref="job4" />
 	</bean>
 
+	<bean name="application3" class="acme.entities.jobs.Application">
+		<property name="reference" value="EMP1-JOB5:WOR1" />
+		<property name="moment" value="2018/12/11 23:59" />
+		<property name="status" value="REJECTED" />
+		<property name="statement" value="Example" />
+		<property name="skills" value="A lot" />
+		<property name="qualifications" value="A lot" />
+		<property name="worker" ref="worker1Worker" />
+		<property name="job" ref="job5" />
+	</bean>
+
 	<bean name="application4" class="acme.entities.jobs.Application">
-		<property name="reference" value="EMP1-JOB2:WOR2" />
+		<property name="reference" value="EMP1-JOB5:WOR2" />
 		<property name="moment" value="2018/12/11 23:59" />
 		<property name="status" value="REJECTED" />
 		<property name="statement" value="Example" />
 		<property name="skills" value="A lot" />
 		<property name="qualifications" value="A lot" />
 		<property name="worker" ref="worker2Worker" />
-		<property name="job" ref="job2" />
+		<property name="job" ref="job5" />
 	</bean>
 
 	<bean name="application5" class="acme.entities.jobs.Application">
-		<property name="reference" value="EMP1-JOB4:WOR2" />
+		<property name="reference" value="EMP2-JOB4:WOR2" />
 		<property name="moment" value="2018/12/11 23:59" />
 		<property name="status" value="ACCEPTED" />
 		<property name="statement" value="Example" />
