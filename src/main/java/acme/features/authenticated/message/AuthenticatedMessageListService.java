@@ -1,5 +1,5 @@
 
-package acme.features.authenticated.messages;
+package acme.features.authenticated.message;
 
 import java.util.Collection;
 
@@ -22,16 +22,11 @@ public class AuthenticatedMessageListService implements AbstractListService<Auth
 
 	@Override
 	public boolean authorise(final Request<Message> request) {
-
 		assert request != null;
-		boolean result;
-		int messageThreadId;
-		Integer messagesOfUserInThread;
-		Principal principal = request.getPrincipal();
 
-		messageThreadId = request.getModel().getInteger("id");
-		messagesOfUserInThread = this.repository.findNumberOfMessagesOfUserInThread(messageThreadId, principal.getActiveRoleId());
-		result = messagesOfUserInThread > 0;
+		int messageThreadId = request.getModel().getInteger("id");
+		Principal principal = request.getPrincipal();
+		boolean result = this.repository.findCountOfMessages(messageThreadId, principal.getActiveRoleId()) > 0;
 
 		return result;
 	}
@@ -42,7 +37,7 @@ public class AuthenticatedMessageListService implements AbstractListService<Auth
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "title", "moment", "authenticated.userAccount.username");
+		request.unbind(entity, model, "title", "moment", "creator.userAccount.username");
 	}
 
 	@Override
@@ -50,10 +45,10 @@ public class AuthenticatedMessageListService implements AbstractListService<Auth
 		assert request != null;
 
 		Collection<Message> result;
-		Model model;
+		int id;
 
-		model = request.getModel();
-		result = this.repository.findManyMessagesByThreadId(model.getInteger("id"));
+		id = request.getModel().getInteger("id");
+		result = this.repository.findManyByMessageThreadId(id);
 
 		return result;
 	}

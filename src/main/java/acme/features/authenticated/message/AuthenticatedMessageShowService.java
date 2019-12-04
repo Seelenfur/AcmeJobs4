@@ -1,5 +1,5 @@
 
-package acme.features.authenticated.messages;
+package acme.features.authenticated.message;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,14 +21,11 @@ public class AuthenticatedMessageShowService implements AbstractShowService<Auth
 	@Override
 	public boolean authorise(final Request<Message> request) {
 		assert request != null;
-		boolean result;
-		int messageId;
-		Integer messagesOfUserInThread;
-		Principal principal = request.getPrincipal();
 
-		messageId = request.getModel().getInteger("id");
-		messagesOfUserInThread = this.repository.findNumberOfMessagesOfUserInThreadByMessageGiven(messageId, principal.getActiveRoleId());
-		result = messagesOfUserInThread > 0;
+		int messageId = request.getModel().getInteger("id");
+		Principal principal = request.getPrincipal();
+		Message message = this.repository.findOneById(messageId);
+		boolean result = this.repository.findCountOfMessages(message.getMessageThread().getId(), principal.getActiveRoleId()) > 0;
 
 		return result;
 	}
@@ -39,7 +36,7 @@ public class AuthenticatedMessageShowService implements AbstractShowService<Auth
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "title", "moment", "tags", "body", "authenticated.userAccount.username");
+		request.unbind(entity, model, "title", "moment", "body", "tags", "creator.userAccount.username");
 	}
 
 	@Override
@@ -50,7 +47,7 @@ public class AuthenticatedMessageShowService implements AbstractShowService<Auth
 		int id;
 
 		id = request.getModel().getInteger("id");
-		result = this.repository.findOneMessageById(id);
+		result = this.repository.findOneById(id);
 
 		return result;
 	}

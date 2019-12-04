@@ -1,16 +1,19 @@
 
 package acme.entities.message;
 
+import java.util.Collection;
 import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
+import javax.validation.constraints.Pattern;
 
 import acme.framework.entities.Authenticated;
 import acme.framework.entities.DomainEntity;
@@ -31,19 +34,22 @@ public class Message extends DomainEntity {
 	@Past
 	private Date				moment;
 
-	private String				tags;
-
 	@NotBlank
 	private String				body;
+
+	@Pattern(regexp = "^[^,]+([,][^,]+)*$")
+	private Collection<String>	tags;
+
+	// Relationships
+
+	@NotNull
+	@Valid
+	@OneToOne(optional = false)
+	private Authenticated		creator;
 
 	@NotNull
 	@Valid
 	@ManyToOne(optional = false)
 	private MessageThread		messageThread;
-
-	@NotNull
-	@Valid
-	@ManyToOne(optional = false)
-	private Authenticated		authenticated;
 
 }

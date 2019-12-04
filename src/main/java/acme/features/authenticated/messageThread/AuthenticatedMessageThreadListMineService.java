@@ -1,5 +1,5 @@
 
-package acme.features.authenticated.messages;
+package acme.features.authenticated.messageThread;
 
 import java.util.Collection;
 
@@ -15,7 +15,7 @@ import acme.framework.services.AbstractListService;
 
 @Service
 
-public class AuthenticatedMessageThreadListService implements AbstractListService<Authenticated, MessageThread> {
+public class AuthenticatedMessageThreadListMineService implements AbstractListService<Authenticated, MessageThread> {
 
 	@Autowired
 	AuthenticatedMessageThreadRepository repository;
@@ -24,6 +24,7 @@ public class AuthenticatedMessageThreadListService implements AbstractListServic
 	@Override
 	public boolean authorise(final Request<MessageThread> request) {
 		assert request != null;
+
 		return true;
 	}
 
@@ -33,7 +34,7 @@ public class AuthenticatedMessageThreadListService implements AbstractListServic
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "title", "moment");
+		request.unbind(entity, model, "title", "moment", "creator.userAccount.username");
 	}
 
 	@Override
